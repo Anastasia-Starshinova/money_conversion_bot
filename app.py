@@ -38,7 +38,7 @@ def convert(message: telebot.types.Message):
         def create_line_for_processing():
             result = []
             number_of_spaces = 0
-            other_symbols = '''!()-[]{};?@#$%:'"\,./^&amp;*_'''
+            other_symbols = '''!()-[]{};?"@#$%:'\\,./^&amp;*_'''
             for elem in raw_data:
                 new_elem = ''
                 if len(elem) != 0:
@@ -63,7 +63,6 @@ def convert(message: telebot.types.Message):
             new_str = []
             start_line = final_data_new[0]
             del final_data_new[-1]
-            print(final_data_new)
             if len(final_data_new) > 2:
                 if final_data_new[0] in currencies:
                     new_str.append(final_data_new[0].strip())
